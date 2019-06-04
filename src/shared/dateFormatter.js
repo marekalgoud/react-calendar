@@ -1,7 +1,7 @@
 import getUserLocale from 'get-user-locale';
 
 const getFormatter = options => (locale, date) => (
-  date.toLocaleString(locale || getUserLocale(), options)
+  date.toLocaleString(locale || getUserLocale(), options).replace(/\u200E/g, '')
 );
 
 /**
